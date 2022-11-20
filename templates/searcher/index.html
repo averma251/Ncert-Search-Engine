@@ -1,0 +1,69 @@
+{% extends "logger/header.html" %}
+{% load static %}
+{% block css %}
+<title> Search </title>
+<link rel="stylesheet" type="text/css" href="{% static 'search.css' %}">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+
+{% block content %} 
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% if user.is_authenticated %}
+    <div class="container" id="container">
+        <div class="form-container search-container">
+            <div class="dropdown">
+                <button id="option" class="dropbtn">Options</button>
+                <div class="dropdown-content">
+                  <a id="history" href="/history">History</a>
+                  <a id="view" href="/profile">View my profile</a>
+                  <a id="view" href="{% url 'logout' %}">Logout</a>
+                </div>
+            </div>
+            <form action="#">
+                <h1 style="padding-bottom: 15px"> Please Enter your Query</h1>
+                <input type="text" name="q" placeholder="I am here to help you.....">
+                <button id="search" style="margin-top: 10px"> Search</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <img src="{% static 'images/little.png' %}" alt="movie-1" height="450" width="350"/>
+                    
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <img src="{% static 'images/little.png' %}" alt="movie-2" height="450" width="350"/>
+                </div>
+            </div>
+        </div>
+    </div>
+{% else %}
+<div class="container" id="container">
+    <div class="form-container search-container" style = "padding: 10% 10% 10% 10%">
+            <h1 style="padding-bottom: 15px"> Already have an account! </h1>
+            <a href = "http://127.0.0.1:8000/login/"><button style="margin-top: 10px">Login</button></a>
+            <p><br></p>
+            <h1 style="padding-bottom: 15px"> New User? </h1>
+            <a href = "http://127.0.0.1:8000/register/"><button style="margin-top: 10px"> Sign-up</button></a>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <img src="{% static 'images/engine.png' %}" alt="movie-1" height="450" width="350"/>
+                
+            </div>
+            <div class="overlay-panel overlay-right">
+                <img src="{% static 'images/engine.png' %}" alt="movie-2" height="450" width="350"/>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

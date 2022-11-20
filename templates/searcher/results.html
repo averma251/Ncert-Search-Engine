@@ -1,0 +1,49 @@
+{% extends "logger/header.html" %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'result.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+    <div class="container" id="container">
+        <div class="dropdown">
+            <a href = "http://127.0.0.1:8000/"><button id="option" class="dropbtn">Home</button></a>
+        </div>
+        <div class="form-container history-container" style="padding: 5%; overflow-y: auto;">
+                {% for data in data %}
+                <h1 style="padding-bottom: 1px"> Results for your query: {{ data.question }}</h1>
+                
+                <p> Result 1: {{ data.a1 }} </p>
+                <p> Context: {{ data.cx1 }} <a href = {{ data.t1 }}>Download Full Context</a><br><hr>
+                </p>
+                <p> Result 2: {{ data.a2 }} </p>
+                <p> Context: {{ data.cx2 }} <a href = {{ data.t2 }}>Download Full Context</a><br><hr>
+                </p>
+                <p> Result 3: {{ data.a3 }} </p>
+                <p> Context: {{ data.cx3 }} <a href = {{ data.t3 }}>Download Full Context</a><br><hr>
+                </p>
+                <p> Result 4: {{ data.a4 }} </p>
+                <p> Context: {{ data.cx4 }} <a href = {{ data.t4 }}>Download Full Context</a><br><hr>
+                </p>
+                <p> Result 5: {{ data.a5 }} </p>
+                <p> Context: {{ data.cx5 }} <a href = {{ data.t5 }}>Download Full Context</a><br><hr>
+                </p>
+                {% endfor %}
+                
+            
+        </div>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <img src="{% static 'images/result.png' %}" alt="movie-1" height="450" width="350"/>
+                
+            </div>
+            <div class="overlay-panel overlay-right">
+                <img src="{% static 'images/result.png' %}" alt="movie-2" height="450" width="350"/>
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% endblock %}

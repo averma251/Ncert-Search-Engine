@@ -1,0 +1,17 @@
+{% extends 'logger/header.html' %}
+{% block content %}
+{% if user.is_authenticated %}
+<form class="search">
+    <input type="text" name="q">
+    <button type = "submit">Search</button>
+</form>
+    {% for data in data %}
+    <h6>{{ data.question }}</h6>
+    <p>{{ data.a1 }}</p>
+    <p>{{ data.a2 }}</p>
+    <p>{{ data.a3 }}</p>
+    <p>{{ data.a4 }}</p>
+    <p>{{ data.a5 }}</p>
+    {% endfor %}
+{% endif %}
+{% endblock %}

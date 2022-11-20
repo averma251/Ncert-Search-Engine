@@ -1,0 +1,45 @@
+{% extends "logger/header.html" %}
+{% load static %}
+{% block css %}
+<title> Search </title>
+<link rel="stylesheet" type="text/css" href="{% static 'history_style.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+    <div class="container" id="container">
+        <div class="form-container history-container">
+            <div class="dropdown">
+                <a href = "http://127.0.0.1:8000/"><button id="option" class="dropbtn">Home</button></a>
+            </div>
+            <form>
+                <h1 style="padding-bottom: 1px"> Your Search History</h1>
+                <hr>
+                {% for data in data|slice:":20" %}
+                {{ data.cur_question }}<br><hr>
+                {% endfor %}
+            </form>
+        </div>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                
+                <img src="{% static 'images/history.png' %}" alt="movie-1" height="450" width="350"/>
+                
+            </div>
+            <div class="overlay-panel overlay-right">
+                
+                <img src="{% static 'images/history.png' %}" alt="movie-2" height="450" width="350"/>
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% endblock %}

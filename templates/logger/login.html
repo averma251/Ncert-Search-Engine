@@ -1,0 +1,52 @@
+{% extends "logger/header.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'login_style.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+
+{% block content %} 
+{% load crispy_forms_tags %}
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form method="">
+                <h1 style="padding-top: 15px"> Create Account</h1>
+                <input type="text" name="fname" placeholder="First Name">
+                <input type="text" name="lname" placeholder="Last Name">
+                <input type="text" name="email" placeholder="Email">
+                <input type="password" name="password" placeholder="Password">
+                <button style="margin-top:10px"> Create Account</button>
+                <h5>Already have an account! <a style="color:green;"><u>Sign In</u></a></h5>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form method="POST">
+                <h1 style="padding-bottom: 15px"> Login Now</h1>
+                {% csrf_token %}
+                {{ login_form|crispy }}
+                <button style="margin-top: 10px" type="submit"> Authorize Me..</button>
+                <h5><a href = "/password_reset" style="color:green;"><u>Forgot Password ?</u></a></h5>
+                <h5>New to here! <a href = "/register" style="color:green;"><u>Sign Up</u></a></h5>
+            </form>
+            
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <img src="{% static 'images/engine.png' %}" alt="movie-1" height="450" width="350"/>
+                    
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <img src="{% static 'images/engine.png' %}" alt="movie-2" height="450" width="350"/>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

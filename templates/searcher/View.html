@@ -1,0 +1,38 @@
+{% extends "logger/header.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'View.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+{% if user.is_authenticated %}
+{% block content %}
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+    <div class="container" id="container">
+        <div class = "form-container search-container">
+            <div class="dropdown">
+                <a href = "http://127.0.0.1:8000/"><button id="option" class="dropbtn">Home</button></a>
+            </div>
+
+            <form>
+                <h1 style="padding-top: 15px"> Your Information</h1>
+                <p>Name : {{ data.username }}<br><br>
+                    Email_id: {{ data.email }}<br> <br>
+                </p>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-right">
+                    <img src="{% static 'images/personal.png' %}" alt="movie-1" height="450" width="350"/>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% endif %}
