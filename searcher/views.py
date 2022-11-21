@@ -112,5 +112,5 @@ def csvtodata(request):
         qa = qas(question=temp[i][0],a1=temp[i][1],a2=temp[i][2],a3=temp[i][3],a4=temp[i][4],a5=temp[i][5],cx1=temp[i][6],cx2=temp[i][7],cx3=temp[i][8],cx4=temp[i][9],cx5=temp[i][10],t1="/static/textfiles/" + temp[i][11],t2="/static/textfiles/" + temp[i][12],t3="/static/textfiles/" + temp[i][13],t4="/static/textfiles/" + temp[i][14],t5="/static/textfiles/" + temp[i][15])
         qa.save()
     return HttpResponse("Done")
-def About(request):
+def about(request):
     return HttpResponse('<h1>Made by Anant Mehta<br>Abhinav Verma<br>Gurjot Singh<br>Chehak Pruthi</h1>')
