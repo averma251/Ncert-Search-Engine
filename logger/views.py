@@ -75,3 +75,5 @@ def password_reset_request(request):
 					return redirect ("/password_reset/done/")
 	password_reset_form = PasswordResetForm()
 	return render(request=request, template_name="logger/password_reset.html", context={"password_reset_form":password_reset_form})
+def about(request):
+    return HttpResponse('<h1>Made by Anant Mehta<br>Abhinav Verma<br>Gurjot Singh<br>Chehak Pruthi</h1>')
