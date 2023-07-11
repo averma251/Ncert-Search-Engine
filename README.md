@@ -4,8 +4,8 @@
 2.pip install django-crispy-forms<br>
 3.pip install haystack -f https://download.pytorch.org/whl/torch_stable.html<br>
 # Images of working project: <br>
-![image](https://github.com/averma251/Ncert-Search-Engine/assets/87894541/a8e7e8a9-9e07-49d5-8d57-1f559ed3e713)
-
+![image](https://github.com/averma251/Ncert-Search-Engine/assets/87894541/a8e7e8a9-9e07-49d5-8d57-1f559ed3e713) <br>
+This is the login page, for logging into your account.<br>
 ![Screenshot (19)](https://github.com/averma251/Ncert-Search-Engine/assets/87894541/8859d649-dc15-44a8-b004-d58142f915ef)
 ![Screenshot (20)](https://github.com/averma251/Ncert-Search-Engine/assets/87894541/65fb9ca3-7743-4c6e-bfa8-4a6747981b90)
 ![Screenshot (18)](https://github.com/averma251/Ncert-Search-Engine/assets/87894541/69840dd2-7653-49db-a6a1-1fe150f40569)
