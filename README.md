@@ -3,6 +3,12 @@
 1.pip install django <br>
 2.pip install django-crispy-forms<br>
 3.pip install haystack -f https://download.pytorch.org/whl/torch_stable.html<br>
+# About the project:
+Central Board in India has prescribed 'NCERT' books in India. This extractive search engine is based on the
+NCERT 'History' book (class 10). Moreover, this search engine can also deal with class 9th queries also for the CBSE board students.
+• The answer to a question is going to be determined by the response that is provided in the book itself, together with the context.<br>
+• Top five documents would be retieved and displayed along with their confidence scores. <br>
+• A student can bookmark and download the responses as well. <br>
 # Images of working project: <br>
 ![image](https://github.com/averma251/Ncert-Search-Engine/assets/87894541/a8e7e8a9-9e07-49d5-8d57-1f559ed3e713) <br>
 ![Screenshot (16)](https://github.com/averma251/Ncert-Search-Engine/assets/87894541/7804440d-0b0c-47e3-8018-8b7b4f315e74) <br>
