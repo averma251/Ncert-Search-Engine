@@ -32,3 +32,6 @@ Please note that while the search engine can provide accurate information based 
 # Registration page for a new user. <br>
 # Deployment Diagram for the this project: <br>
 ![Screenshot (14)](https://github.com/averma251/Ncert-Search-Engine/assets/87894541/b141b843-128d-418e-9d05-96c0b8689f11)
+
+# Working of the project : Video <br>
+[httpsdrive.google.comfiled1eOFzG_wC.txt](https://github.com/averma251/Ncert-Search-Engine/files/12126612/httpsdrive.google.comfiled1eOFzG_wC.txt)
